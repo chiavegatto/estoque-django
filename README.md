@@ -1,10 +1,16 @@
 # Desafio WPensar BACK-END
 Desenvolvido por Gustavo Pergola
 Prazo: 29/12 11:59
+**Trello:** https://trello.com/b/TOzbvggQ/estoque-wpensar
 
 ## Tecnologias utilizadas
 * Python 3.5.2
 * Django 2.0
+
+## Obeservações sobre tomadas de decisão 
+
+Foi escolhido o tipo BigInteger para suportar o dinheiro, manipulando com divisões ou multiplicações por 100.
+Tal escolha permite a simplicidade do projeto além de garantir comprar com valores de alguns trilhões, cobrindo todos casos possíveis.
 
 ## Requisitos
 
