@@ -7,8 +7,6 @@ Prazo: 29/12 11:59
 * Django 2.0
 
 ## Requisitos
-    
-O conceito desse desafio é nos ajudar a avaliar as habilidades dos candidatos às vagas de backend.
 
 Você tem que desenvolver um sistema de estoque para um supermercado.
 
@@ -17,7 +15,7 @@ Para fins de simplificação assuma que produtos que tenham nomes iguais, são o
 
 O valor calculado de preço médio deve ser armazenado.
 
-Seu sistema deve:
+Seu sistema deve ter:
 
 1. Cadastro de produtos (Nome)
 2. Compra de produtos (Produto, quantidade e preço de compra)
