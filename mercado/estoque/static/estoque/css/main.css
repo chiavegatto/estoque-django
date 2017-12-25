@@ -1,0 +1,221 @@
+* {
+	font-size: 1em;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	font-family: 'Libre Baskerville', serif;
+}
+
+h1, h2, h3 {
+	font-family: 'Kreon', serif;
+}
+
+h1 {
+	margin-bottom: 30px;
+}
+
+.navbar {
+	z-index: 1;
+	width: 100%;
+	height: 100px;
+	border-radius: 0px;
+	background-color: rgba(13,13,13,0.7);
+	border-color: transparent;
+	position: fixed;
+}
+
+.navbar img {
+	width: 130px;
+	height: 100px;
+	display: inline-block;
+	margin-left: 40px;
+	padding-bottom: 20px;
+}
+
+.navbar ul{
+	
+	padding-top: 25px;
+	font-size: 1.5em;
+	margin-right: 40px;
+}	
+
+.dropdown-menu {
+	background-color: rgba(0,0,0,0.6);
+
+}
+
+.dropdown-menu li {
+	color: #BBB;
+	font-size: 0.75em;
+}
+
+.navbar-collapse  ul li a {
+	color: #BBB !important;
+}
+
+.dropdown-menu li a:hover{
+	color: black !important;
+}
+
+.carousel {
+	width: 100%;
+	
+}
+
+.carousel img {
+	width: 100%;
+	height: 940px;
+	max-height: 700px;
+}
+
+.carousel-caption h2{
+	
+	font-size: 6em;
+}
+
+.carousel-caption p{
+	font-size: 2em;
+	margin-bottom: 150px;
+}
+
+#section-moments {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-color: #121212;
+	color: #BBB;
+}
+
+#section-contato {
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	color: #DDD;
+	background-color: #222;
+}
+
+#section-contato h2 {
+	padding-bottom: 20px;
+}
+
+#section-contato input[type="submit"] {
+	width: 200px;
+	height: 50px;
+	margin-top: 20px;
+}
+
+.form-group {
+	font-size: 1.6em;
+	text-align: center;
+}
+
+input[type="text"], input[type="email"], textarea.form-control{
+    font-size:24px;
+    height: 50px;
+}
+
+textarea.form-control{
+	height: 250px;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+   padding-top: 10px;
+}
+
+.section-portfolio {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	color: #DDD;
+	background-color: #121212;
+	text-align: center;
+}
+
+.section-portfolio img {
+	
+	margin: 10px;
+	margin-bottom: 30px;
+	width: 370px;
+	height: 300px;
+}
+
+.section-portfolio h2{
+	padding-bottom: 20px;
+}
+
+footer {
+	color: #555;
+	text-align: center;
+	padding: 20 0 20 0px;
+	background-color: #121212;
+}
+
+.line{
+	background-color: #AAA;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 3px;
+}
+
+
+footer ul {
+	text-align: center
+}
+
+footer li {
+	margin: 20px;
+	display: inline-block;
+}
+
+footer span {
+	display: inline-block;
+	padding-left: 5px; 
+}
+
+a, a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #666;
+}
+
+body {
+	background-color: #222; 
+}
+
+.section-produto {
+	color: white;
+	background-color: #333; 
+	padding: 50px 150px 150px 150px;
+	border-radius: 3px;
+	text-align: center;
+	margin: 200px;
+}
+
+.section-produto h1{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.price {
+	font-size: 1.5em;
+	margin-top: 7%;
+	text-align: center;
+}
+
+.price h2 {
+	background-color: #666;
+	border-radius: 3px;
+	margin-bottom: 75px;
+	font-size: 3.5em;
+}
+	
+
+#produto-voltar{
+	font-size: 2em;
+}
+
+.space {
+	margin-top: 100px;
+}
