@@ -3,7 +3,7 @@
 
 <h2>Administrando Produtos</h2>
 
-<table id="ProductsTable">
+<table class="estoqueDatatable">
     <thead>
         <tr>
             <th>Nome do Produto</th>
@@ -18,5 +18,11 @@
     </tbody>
 </table>
 
-<a href="/">Voltar</a>
+<form action="/produtos/" method="post">
+    {{ form }}
+    {% csrf_token %}
+    <input type="submit" value="Adicionar novo produto" />
+</form>
+
+<a href="{%url 'home'%}">Voltar</a>
 {% endblock %}
