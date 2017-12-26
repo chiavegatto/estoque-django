@@ -7,12 +7,21 @@
     <thead>
         <tr>
             <th>Nome do Produto</th>
+            <th>Estoque</th>
         </tr>
     </thead>
     <tbody>
         {% for produto in produto_list %}
         <tr>
-            <td><a href="/produto/{{produto.id}}">{{produto.nome}}</a></td>
+            <td>{{produto.nome}}</td>
+            <td>
+                {%if produto.estoque%}
+                    {{produto.estoque}}
+                {%else%}
+                    0
+                {%endif%}
+            </td>
+
         </tr>
         {% endfor %}
     </tbody>
