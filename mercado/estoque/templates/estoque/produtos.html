@@ -1,0 +1,22 @@
+{% extends "estoque/application.html" %} 
+{% block content %} 
+
+<h2>Administrando Produtos</h2>
+
+<table id="ProductsTable">
+    <thead>
+        <tr>
+            <th>Nome do Produto</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for produto in produto_list %}
+        <tr>
+            <td><a href="/produto/{{produto.id}}">{{produto.nome}}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="/">Voltar</a>
+{% endblock %}
