@@ -3,6 +3,11 @@
 
 <h2>Comprando Produtos</h2>
 
+<form action="{%url 'compra'%}" method="post">
+    {{ form }}
+    {% csrf_token %}
+    <input type="submit" value="Realizar compra" />
+</form>
 
 <a href="{%url 'home'%}">Voltar</a>
 {% endblock %}

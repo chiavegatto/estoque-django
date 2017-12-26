@@ -21,13 +21,12 @@
                     0
                 {%endif%}
             </td>
-
         </tr>
         {% endfor %}
     </tbody>
 </table>
 
-<form action="/produtos/" method="post">
+<form action="{%url 'produtos'%}" method="post">
     {{ form }}
     {% csrf_token %}
     <input type="submit" value="Adicionar novo produto" />
