@@ -14,3 +14,8 @@ class Compra(models.Model):
 
     def __str__(self):
         return "%s %s" % (self.quantidade, self.produto.nome)
+
+    #Override do método save() do modelo para calcular o valor_medio automaticamente
+    def save(self, *args, **kwargs):
+        self.valor_medio = self.valor / self.quantidade
+        super(Compra, self).save(*args, **kwargs)

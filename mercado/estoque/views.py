@@ -31,9 +31,8 @@ def compra(request):
             produto = form.cleaned_data['produto']
             quantidade = form.cleaned_data['quantidade'] 
             valor = Decimal(form.cleaned_data['valor'])
-            valor_medio = valor / quantidade
             
-            compra = Compra(quantidade=quantidade, valor=valor, produto=produto, valor_medio=valor_medio)
+            compra = Compra(quantidade=quantidade, valor=valor, produto=produto)
             compra.save()
 
 
