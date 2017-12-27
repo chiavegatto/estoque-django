@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator
 
 class Produto(models.Model):
     nome = models.CharField(max_length=300)
@@ -7,8 +8,8 @@ class Produto(models.Model):
         return self.nome
 
 class Compra(models.Model):
-    quantidade = models.IntegerField()
-    valor = models.DecimalField(max_digits=12, decimal_places=2)
+    quantidade = models.IntegerField(validators=[MinValueValidator(1)])
+    valor = models.DecimalField(max_digits=12, decimal_places=2, validators=[MinValueValidator(0.1)])
     valor_medio = models.DecimalField(max_digits=12, decimal_places=2)
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
 

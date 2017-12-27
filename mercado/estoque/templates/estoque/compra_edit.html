@@ -3,7 +3,7 @@
 
 <h2>Editando compra: {{compra}}s</h2>
 
-<form action="/compra/{{compra.id}}" method="post">
+<form action="{% url 'compra'%}{{compra.id}}" method="post">
     {{ form }}
     {% csrf_token %}
     <input type="submit" value="Editar Compra" />

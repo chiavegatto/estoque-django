@@ -11,7 +11,7 @@ class AddProdutoForm(forms.ModelForm):
 class CompraLevaProdutosForm(forms.ModelForm):
     produto = forms.ModelChoiceField(queryset=Produto.objects.all(), empty_label="Selecione um produto")
     quantidade = forms.IntegerField(min_value=1)
-    valor = forms.DecimalField(decimal_places=2)
+    valor = forms.DecimalField(decimal_places=2, min_value=0.01)
 
     class Meta:
         model = Compra
