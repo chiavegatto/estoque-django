@@ -29,9 +29,10 @@ def compra(request):
         if form.is_valid():
             produto = form.cleaned_data['produto']
             quantidade = form.cleaned_data['quantidade'] 
-            # multiplicando por 100 pois armazenamos com BigInt e não com decimal (sem perder a representação dos centavos)
-            valor = int(float(form.cleaned_data['valor'] * 100))
-            compra = Compra(quantidade=quantidade, valor=valor, produto=produto, valor_medio=1)
+            # TODO multiplicando por 100 pois armazenamos com BigInt e não com decimal (sem perder a representação dos centavos)
+            valor = float(form.cleaned_data['valor'])
+            valor_medio = valor / quantidade
+            compra = Compra(quantidade=quantidade, valor=valor, produto=produto, valor_medio=valor_medio)
             compra.save()
 
 
