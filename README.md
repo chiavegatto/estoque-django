@@ -1,6 +1,8 @@
 # Desafio WPensar BACK-END
 Desenvolvido por Gustavo Pergola
-Prazo: 29/12 11:59
+
+Prazo: 29/12 11:59 
+
 **Trello:** https://trello.com/b/TOzbvggQ/estoque-wpensar
 
 ## Tecnologias utilizadas
