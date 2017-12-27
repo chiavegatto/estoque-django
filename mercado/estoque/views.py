@@ -3,6 +3,7 @@ from estoque.models import Produto, Compra
 from .forms import AddProdutoForm, CompraLevaProdutosForm
 from django.db.models import Sum
 import logging
+from decimal import *
 
 
 def index(request):
@@ -29,9 +30,9 @@ def compra(request):
         if form.is_valid():
             produto = form.cleaned_data['produto']
             quantidade = form.cleaned_data['quantidade'] 
-            # TODO multiplicando por 100 pois armazenamos com BigInt e não com decimal (sem perder a representação dos centavos)
-            valor = float(form.cleaned_data['valor'])
+            valor = Decimal(form.cleaned_data['valor'])
             valor_medio = valor / quantidade
+            
             compra = Compra(quantidade=quantidade, valor=valor, produto=produto, valor_medio=valor_medio)
             compra.save()
 

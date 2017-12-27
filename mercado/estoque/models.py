@@ -8,8 +8,8 @@ class Produto(models.Model):
 
 class Compra(models.Model):
     quantidade = models.IntegerField()
-    valor = models.BigIntegerField()
-    valor_medio = models.BigIntegerField()
+    valor = models.DecimalField(max_digits=12, decimal_places=2)
+    valor_medio = models.DecimalField(max_digits=12, decimal_places=2)
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
 
     def __str__(self):
