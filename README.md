@@ -21,8 +21,8 @@ O valor calculado de preço médio deve ser armazenado.
 Seu sistema deve ter:
 
 1. Cadastro de produtos (Nome) -- OK
-2. Compra de produtos (Produto, quantidade e preço de compra)
-3. Listagem dos produtos comprados separados por compra (Nome, quantidade, preço de compra, preço médio)
+2. Compra de produtos (Produto, quantidade e preço de compra) -- OK
+3. Listagem dos produtos comprados separados por compra (Nome, quantidade, preço de compra, preço médio) -- OK
 4. Ser fácil de configurar e rodar em ambiente Unix (Linux ou Mac OS X)
 5. Ser WEB -- OK
 6. Ser escrita em Python 3.4+ -- OK

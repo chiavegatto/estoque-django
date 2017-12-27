@@ -1,0 +1,28 @@
+{% extends "estoque/application.html" %} 
+{% block content %} 
+
+<h2>Histórico de Compras</h2>
+
+<table class="estoqueDatatable">
+    <thead>
+        <tr>
+            <th>Nome do Produto</th>
+            <th>Quantidade de compra</th>
+            <th>Preço total</th>
+            <th>Preço médio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for compra in compra_list %}
+        <tr>
+            <td> {{compra.produto}} </td>
+            <td> {{compra.quantidade}} </td>
+            <td> R$ {{compra.valor}} </td>
+            <td> R$ {{compra.valor_medio}} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{%url 'home'%}">Voltar</a>
+{% endblock %}

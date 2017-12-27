@@ -39,3 +39,8 @@ def compra(request):
 
     form = CompraLevaProdutosForm()
     return render(request, 'estoque/compra.html', {'form': form})
+
+def listagem_compras(request):
+
+    compra_list = Compra.objects.all()
+    return render(request, 'estoque/listagem_compras.html', {'compra_list': compra_list})
