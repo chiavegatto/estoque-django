@@ -10,6 +10,7 @@
             <th>Quantidade de compra</th>
             <th>Preço total</th>
             <th>Preço médio</th>
+            <th>Editar</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +20,7 @@
             <td> {{compra.quantidade}} </td>
             <td> R$ {{compra.valor}} </td>
             <td> R$ {{compra.valor_medio}} </td>
+            <td> <a href="{% url 'compra'%}{{compra.id}}" >Editar</a> </td>
         </tr>
         {% endfor %}
     </tbody>

@@ -1,0 +1,13 @@
+{% extends "estoque/application.html" %} 
+{% block content %} 
+
+<h2>Editando compra: {{compra}}s</h2>
+
+<form action="/compra/{{compra.id}}" method="post">
+    {{ form }}
+    {% csrf_token %}
+    <input type="submit" value="Editar Compra" />
+</form>
+
+<a href="{%url 'listagem_compras'%}">Voltar</a>
+{% endblock %}

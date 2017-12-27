@@ -1,9 +1,9 @@
 {% extends "estoque/application.html" %} 
 {% block content %} 
 
-<h2>Comprando Produtos</h2>
+<h2>Comprando novos produtos</h2>
 
-<form action="{%url 'compra'%}" method="post">
+<form action="{%url 'compra' %}" method="post">
     {{ form }}
     {% csrf_token %}
     <input type="submit" value="Realizar compra" />
