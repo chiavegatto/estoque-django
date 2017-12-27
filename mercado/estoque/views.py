@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from estoque.models import Produto, Compra
 from .forms import AddProdutoForm, CompraLevaProdutosForm
 from django.db.models import Sum
@@ -9,34 +9,29 @@ from decimal import *
 def index(request):
     return render(request, 'estoque/home.html')
 
+
 def produtos(request):
+    form = AddProdutoForm(request.POST or None)
     if request.method == 'POST':
         # Recebeu nome de um novo produto pelo form
-        form = AddProdutoForm(request.POST)
         if form.is_valid():
-            nome_novo =  form.cleaned_data['nome']
-            produto_novo = Produto(nome=nome_novo)
-            produto_novo.save()
-
-    form = AddProdutoForm()
+            form.save()
+            
     produto_list = Produto.objects.all().order_by("nome").annotate(estoque=Sum('compra__quantidade'))
 
     return render(request, 'estoque/produtos.html', {'produto_list': produto_list, 'form': form})
 
+
 def compra(request):
+    # carrega objeto caso seja uma requisição para editar
+    #instance = get(Compra, id=id)
+    form = CompraLevaProdutosForm(request.POST or None)
+
     if request.method == 'POST':
         #recebeu requisição de compra
-        form = CompraLevaProdutosForm(request.POST)
         if form.is_valid():
-            produto = form.cleaned_data['produto']
-            quantidade = form.cleaned_data['quantidade'] 
-            valor = Decimal(form.cleaned_data['valor'])
-            
-            compra = Compra(quantidade=quantidade, valor=valor, produto=produto)
-            compra.save()
+            form.save()
 
-
-    form = CompraLevaProdutosForm()
     return render(request, 'estoque/compra.html', {'form': form})
 
 def listagem_compras(request):
