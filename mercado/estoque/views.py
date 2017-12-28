@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Sum
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
 
-from .models import Produto, Compra
-from .forms import AddProdutoForm, CompraLevaProdutosForm
+from .models import *
+from .forms import *
 
 
 
@@ -46,7 +47,6 @@ def compra(request):
 
 
 def compra_edit(request, id):
-
     compra = get_object_or_404(Compra, id=id)
     form = CompraLevaProdutosForm(request.POST or None, instance=compra)
     
@@ -58,7 +58,33 @@ def compra_edit(request, id):
 
     return render(request, 'estoque/compra_edit.html', {'form': form, 'compra': compra})
 
-def listagem_compras(request):
 
+def listagem_compras(request):
     compra_list = Compra.objects.all()
     return render(request, 'estoque/listagem_compras.html', {'compra_list': compra_list})
+
+
+def login(request):
+    #if request.method == 'POST':
+
+    return render(request, 'estoque/login.html')
+
+
+def registrar(request):
+    
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user_password = form.cleaned_data['password']
+            user.set_password(user_password)
+            user.save()
+            messages.add_message(request, messages.SUCCESS, 'Cadastro efetuado com sucesso.')
+            # logar o usuário TODO
+            return redirect('home')
+        messages.add_message(request, messages.ERROR, 'Opa, algo aconteceu. Talvez você esteja escolhendo um usuário já existente?')
+    
+    form = UsuarioForm(None)
+    return render(request, 'estoque/registrar.html', {"form": form})
+
+    

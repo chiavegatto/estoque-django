@@ -1,5 +1,6 @@
 from django import forms
 from .models import Produto, Compra
+from django.contrib.auth.models import User
 
 class AddProdutoForm(forms.ModelForm):
     nome = forms.CharField(label='Nome do novo produto', max_length=300)
@@ -17,3 +18,10 @@ class CompraLevaProdutosForm(forms.ModelForm):
         model = Compra
         fields = ('produto', 'quantidade', 'valor',)
     
+class UsuarioForm(forms.ModelForm):
+    username = forms.CharField(label="Seu nome de usuário", max_length= 300)
+    password = forms.CharField(label="Sua senha", widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ('username', 'password',)
