@@ -1,0 +1,35 @@
+from django.test import TestCase
+from .models import Compra, Produto
+
+class CompraTests(TestCase):
+
+    def setUp(self):
+        Produto.objects.create(nome="Produto1", valor_medio=0)
+        
+    def test_cria_compra(self):
+        produto = Produto.objects.first()
+        previous_compra_count = Compra.objects.count()
+        Compra.objects.create(produto=produto, valor=100, quantidade=100)
+        self.assertEqual(Compra.objects.count(), previous_compra_count + 1)
+
+    def test_valor_medio_trigger(self):
+        valor1 = 500
+        valor2 = 200
+        quantidade = 100
+        produto = Produto.objects.first()
+        
+        Compra.objects.create(produto=produto, valor=valor1, quantidade=quantidade)
+        Compra.objects.create(produto=produto, valor=valor2, quantidade=quantidade)
+        
+        valor_medio_esperado = (valor1 + valor2)/(quantidade * 2)
+        self.assertEqual(produto.valor_medio,  valor_medio_esperado)
+
+class ProdutoTests(TestCase):
+        
+    def test_cria_produto(self):
+        previous_produto_count = Produto.objects.count()
+        Produto.objects.create(nome="Produto1", valor_medio=0)
+        self.assertEqual(Produto.objects.count(), previous_produto_count + 1)
+
+
+
