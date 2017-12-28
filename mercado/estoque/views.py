@@ -38,7 +38,8 @@ def compra(request):
         if form.is_valid():
             compra = form.save()
             messages.add_message(request, messages.SUCCESS, 'Compra de ' + compra.__str__() + 's efetuada com sucesso.')
-        
+        else:
+            return redirect('compra')
         form = CompraLevaProdutosForm() # reseta o form para aparecer em branco quando retornar
         
     

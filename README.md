@@ -34,8 +34,9 @@ Prazo: 29/12 11:59
         
         python3 manage.py createsuperuser
 
-
-
+* Se quiser aplicar os testes automatizados:
+        
+        python3 manage.py test
 
 ## Requisitos
 
