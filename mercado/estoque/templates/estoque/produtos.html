@@ -1,7 +1,15 @@
 {% extends "estoque/application.html" %} 
 {% block content %} 
 
-<h2>Administrando Produtos</h2>
+<div class="center-div">
+    <h2>Administrando Produtos</h2>
+
+    <form action="{%url 'produtos'%}" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <input type="submit" value="Adicionar novo produto" />
+    </form>
+</div>
 
 <table class="estoqueDatatable" data-page-length='25'> 
     <thead>
@@ -33,12 +41,6 @@
         {% endfor %}
     </tbody>
 </table>
-
-<form action="{%url 'produtos'%}" method="post">
-    {{ form }}
-    {% csrf_token %}
-    <input type="submit" value="Adicionar novo produto" />
-</form>
 
 <a href="{%url 'home'%}">Voltar</a>
 {% endblock %}

@@ -1,7 +1,110 @@
-.delete {
-    color: red;
+/*A pallete
+    gold: #C0B283
+    silk: #DCD0C0
+    paper: #f4f4f4
+    charcoal: #373737*/
+
+
+/***** CLEANING AND PRESETS *****/
+
+body{
+    background-color: #f4f4f4;
+    font-family: 'Raleway', sans-serif;
+}
+
+li {
+     list-style: none; 
 }
 
 a:hover{
     text-decoration: none;  
+    color: #C0B283;
+}
+
+a{
+    color: #373737;
+}
+
+.color-gold{
+    color: #C0B283;
+}
+
+.color-silk{
+    color: #FCD0C0;
+}
+
+.paper-background{
+    background-color: #f4f4f4;
+}
+
+.silk-background{
+    background-color: #DCD0C0;
+}
+
+
+/**** NAVBAR *****/
+.navbar a{
+    font-size: 1em;
+}
+
+#estoque-brand{
+    font-size: 2.3em;
+}
+
+.navbar-brand{
+    background-color: #f4f4f4;
+    color: #c0b283 !important;
+}
+
+.navbar-brand:hover{
+    background-color: #f4f4f4 !important;
+}
+
+#first-li-navbar-right{
+    padding: 15px 35px 15px 15px;   
+}
+
+/***** GENERAL CENTER DIV *****/
+.center-div {
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    margin-left: 300px;
+    border-color: #DCD0C0;
+    border-left-style: solid;
+    border-width: 35px;
+}
+
+.center-div h2 {
+    padding-top: 50px;
+    font-size: 2.8em;
+    color: #373737;
+}
+
+.center-div li {
+    color: #373737;
+    margin: 30px 100px;
+    padding: 10px 0px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #DCD0C0;
+    border-radius: 2px;
+    font-size: 1.3em;
+    transition: 0.6s;
+}
+
+.center-div li:hover{
+    background-color: rgba(220, 208, 192, 0.753);
+    border-color: #DCD0C0;
+    color: #c0b283;
+}
+
+.center-div ul {
+    padding: 0px;
+    margin: 50px 0px;
+}
+
+
+.delete {
+    color: red;
 }

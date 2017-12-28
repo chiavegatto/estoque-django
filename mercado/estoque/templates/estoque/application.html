@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<link rel="stylesheet" href="{% static 'estoque/css/bootstrap.min.css' %}" type = "text/css"/>
 		<link rel="stylesheet" href="{% static 'estoque/css/datatables.min.css' %}" type = "text/css"/>
 		<link rel="stylesheet" href="{% static 'estoque/css/main.css' %}" type = "text/css"/>
@@ -25,24 +26,32 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{%url 'home'%}">Estoque</a>
+				<a class="navbar-brand" href="{%url 'home'%}"><span id="estoque-brand">Estoque</span></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					{%if user.is_authenticated%}
-						<li class="active"><a href="{%url 'logout'%}">Logout <span class="sr-only">(current)</span></a></li>
-					{%endif%}
+				{%if user.is_authenticated%}
+				<ul class="nav navbar-nav">
+					<li><a href="{%url 'produtos'%}">Administrar produtos</a></li>
+					<li><a href="{%url 'compra'%}">Comprar produtos</a></li>
+					<li><a href="{%url 'listagem_compras'%}">Lista de compras</a></li>
 				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li id="first-li-navbar-right" class="color-gold">{{user.username}}</li>
+					<li class="paper-background"><a href="{%url 'logout'%}" >Logout <span class="sr-only">(current)</span></a></li>
+				</ul>
+				{%endif%}
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
 		<!-- END Bootstrap Navbar -->
-
+		<div class="container">
+		
 		{% include "estoque/includes/mensagens.html" %}
 
 		{% block content %}
 		{% endblock %}
 		
+		</div>
 		<script src="{% static 'estoque/js/jquery-3.2.1.min.js' %}"></script>
 		<script src="{% static 'estoque/js/bootstrap.min.js' %}"></script>
 		<script src="{% static 'estoque/js/datatables.min.js' %}"></script>
