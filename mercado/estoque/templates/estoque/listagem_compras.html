@@ -3,13 +3,12 @@
 
 <h2>Histórico de Compras</h2>
 
-<table class="estoqueDatatable">
+<table class="estoqueDatatable" data-page-length='25'>
     <thead>
         <tr>
             <th>Nome do Produto</th>
             <th>Quantidade de compra</th>
             <th>Preço total</th>
-            <th>Preço médio</th>
             <th>Editar</th>
             <th>Deletar</th>
         </tr>
@@ -20,7 +19,6 @@
             <td> {{compra.produto}} </td>
             <td> {{compra.quantidade}} </td>
             <td> R$ {{compra.valor}} </td>
-            <td> R$ {{compra.valor_medio}} </td>
             <td> <a href="{% url 'compra'%}{{compra.id}}" >Editar</a> </td>
             <td> <a class='delete' href="/deletar_compra/{{compra.id}}"> Deletar </a></td>
         </tr>

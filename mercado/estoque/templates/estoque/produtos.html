@@ -3,11 +3,12 @@
 
 <h2>Administrando Produtos</h2>
 
-<table class="estoqueDatatable">
+<table class="estoqueDatatable" data-page-length='25'> 
     <thead>
         <tr>
             <th>Nome do Produto</th>
             <th>Estoque</th>
+            <th>Preço Médio</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +20,13 @@
                     {{produto.estoque}}
                 {%else%}
                     0
+                {%endif%}
+            </td>
+            <td>
+                {%if produto.valor_medio%}
+                    R$ {{produto.valor_medio}}
+                {%else%}
+                    R$ 0
                 {%endif%}
             </td>
         </tr>

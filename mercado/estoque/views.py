@@ -37,7 +37,7 @@ def compra(request):
        
         if form.is_valid():
             compra = form.save()
-            messages.add_message(request, messages.SUCCESS, 'Compra de ' + compra.__str__() + 's efetuada com sucesso. Valor medio = R$ ' + str(round(compra.valor_medio,2)))
+            messages.add_message(request, messages.SUCCESS, 'Compra de ' + compra.__str__() + 's efetuada com sucesso.')
         
         form = CompraLevaProdutosForm() # reseta o form para aparecer em branco quando retornar
         
