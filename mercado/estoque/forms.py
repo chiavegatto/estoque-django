@@ -19,9 +19,14 @@ class CompraLevaProdutosForm(forms.ModelForm):
         fields = ('produto', 'quantidade', 'valor',)
     
 class UsuarioForm(forms.ModelForm):
-    username = forms.CharField(label="Seu nome de usuário", max_length= 300)
+    username = forms.CharField(label="Seu nome de usuário", max_length=200)
     password = forms.CharField(label="Sua senha", widget=forms.PasswordInput)
+    email = forms.EmailField(label="Seu E-mail", max_length=200)
 
     class Meta:
         model = User
-        fields = ('username', 'password',)
+        fields = ('username', 'email', 'password',)
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label="Seu nome de usuário", max_length=200)
+    password = forms.CharField(label="Sua senha", widget=forms.PasswordInput)

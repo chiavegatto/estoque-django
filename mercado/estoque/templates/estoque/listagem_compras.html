@@ -11,6 +11,7 @@
             <th>Preço total</th>
             <th>Preço médio</th>
             <th>Editar</th>
+            <th>Deletar</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
             <td> R$ {{compra.valor}} </td>
             <td> R$ {{compra.valor_medio}} </td>
             <td> <a href="{% url 'compra'%}{{compra.id}}" >Editar</a> </td>
+            <td> <a class='delete' href="/deletar_compra/{{compra.id}}"> Deletar </a></td>
         </tr>
         {% endfor %}
     </tbody>
