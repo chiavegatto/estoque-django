@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from estoque.models import Produto, Compra
-from .forms import AddProdutoForm, CompraLevaProdutosForm
 from django.db.models import Sum
-import logging
-from decimal import *
+from django.contrib import messages
+
+from .models import Produto, Compra
+from .forms import AddProdutoForm, CompraLevaProdutosForm
+
 
 
 def index(request):
@@ -12,10 +13,12 @@ def index(request):
 
 def produtos(request):
     if request.method == 'POST':
-        form = AddProdutoForm(request.POST)
         # Recebeu nome de um novo produto pelo form
+        form = AddProdutoForm(request.POST)
+        
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Produto cadastrado com sucesso.')
 
     form = AddProdutoForm()
     produto_list = Produto.objects.all().order_by("nome").annotate(estoque=Sum('compra__quantidade'))
@@ -27,11 +30,15 @@ def compra(request):
     form = CompraLevaProdutosForm()
 
     if request.method == 'POST':
-        form = CompraLevaProdutosForm(request.POST)
         #recebeu requisição de compra
+        form = CompraLevaProdutosForm(request.POST)
+       
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Compra efetuada com sucesso.')
+        
         form = CompraLevaProdutosForm() # reseta o form para aparecer em branco quando retornar
+        
     
     heading = "Comprando Produtos"
 
@@ -47,6 +54,7 @@ def compra_edit(request, id):
         # recebeu pedido de editar a compra
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Compra editada com sucesso.')
 
     return render(request, 'estoque/compra_edit.html', {'form': form, 'compra': compra})
 
