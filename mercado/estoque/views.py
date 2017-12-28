@@ -57,6 +57,8 @@ def compra_edit(request, id):
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, 'Compra editada com sucesso.')
+        else:
+            return redirect('/compra/' + str(id))
 
     return render(request, 'estoque/compra_edit.html', {'form': form, 'compra': compra})
 

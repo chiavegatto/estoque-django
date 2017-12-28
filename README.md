@@ -59,6 +59,6 @@ Seu sistema deve ter:
 
 Esse sistema não precisa ter, mas será um plus:
 
-1. Autenticação e autorização (se for com OAuth, melhor ainda)
-2. Ter um design bonito
-3. Testes automatizados
+1. Autenticação e autorização -- OK (Sem OAuth)
+2. Ter um design bonito 
+3. Testes automatizados -- OK

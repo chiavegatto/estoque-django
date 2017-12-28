@@ -1,8 +1,8 @@
 from django.test import TestCase
-from .views import * 
+from .views import *  
 from .models import *
 
-class CompraViews(TestCase):
+class CompraViewsAuth(TestCase):
 
     # Classe representando os métodos:
         # compra
@@ -19,6 +19,8 @@ class CompraViews(TestCase):
         # Seta uma compra para evitar 404
         Produto.objects.create(nome="Produto1", valor_medio=0)
         Compra.objects.create(produto=Produto.objects.first(), valor=100, quantidade=100)
+
+    ################# TESTES DE AUTENTICAÇÃO ###########################
 
     def test_redireciona_anonimo_para_login_compra(self):
         # Testa o método COMPRA
@@ -49,6 +51,8 @@ class CompraViews(TestCase):
         self.assertRedirects(resposta, '/login/?next=/listagem_compras/', status_code=301)
 
 
+    ################# TESTES DE TEMPLATE ###########################
+
     def test_mostra_template_compra_view(self):
         # Testa a view COMPRA
         self.client.login(username='nome', password='pass')
@@ -77,6 +81,8 @@ class CompraViews(TestCase):
         self.assertEqual(resposta.status_code, 200)
         self.assertTemplateUsed(resposta, 'estoque/listagem_compras.html')
 
+    ################# TESTES DE ENVIOS DE FORMULÁRIO ###########################
+    ## Compra tests
     def test_recusa_form_branco_compra_view(self):
         self.client.login(username='nome', password='pass')
         # pedido em branco
@@ -95,3 +101,21 @@ class CompraViews(TestCase):
         resposta = self.client.post('/compra/', {'quantidade': 100, 'valor': 100, 'produto': produto.id}) 
         self.assertEqual(resposta.status_code, 200)
 
+    ## Compra_edit tests
+    def test_recusa_form_branco_compra_edit_view(self):
+        self.client.login(username='nome', password='pass')
+        # pedido em branco
+        resposta = self.client.post('/compra/1', {}) 
+        self.assertEqual(resposta.status_code, 302)
+
+    def test_recusa_form_invalido_compra_edit_view(self):
+        # pedido invalido (parametro ruim)
+        resposta = self.client.post('/compra/1', {'quantidade': 100, 'valor': 100, 'produto': "produto teste"}) 
+        self.assertEqual(resposta.status_code, 302)
+        
+    def test_aceita_form_valido_compra_edit_view(self):
+        self.client.login(username='nome', password='pass')
+        # pedido certo
+        produto = Produto.objects.first()
+        resposta = self.client.post('/compra/1', {'quantidade': 100, 'valor': 100, 'produto': produto.id}) 
+        self.assertEqual(resposta.status_code, 200)

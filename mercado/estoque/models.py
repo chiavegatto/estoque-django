@@ -4,7 +4,7 @@ from django.core.validators import MinValueValidator
 
 class Produto(models.Model):
     nome = models.CharField(max_length=300)
-    valor_medio = models.DecimalField(max_digits=12, decimal_places=2)
+    valor_medio = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     def __str__(self):
         return self.nome
 

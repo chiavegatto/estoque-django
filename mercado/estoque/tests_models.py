@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Compra, Produto
+from django.contrib.auth.models import User
 
 class CompraTests(TestCase):
 
@@ -37,8 +38,15 @@ class ProdutoTests(TestCase):
         
     def test_cria_produto(self):
         previous_produto_count = Produto.objects.count()
-        Produto.objects.create(nome="Produto1", valor_medio=0)
+        Produto.objects.create(nome="Produto1")
         self.assertEqual(Produto.objects.count(), previous_produto_count + 1)
 
+
+class UserTests(TestCase):
+    
+    def test_cria_usuario(self):
+        previous_usuario_count = User.objects.count()
+        User.objects.create(username="Usuario", password="123")
+        self.assertEqual(User.objects.count(), previous_usuario_count + 1)
 
 
