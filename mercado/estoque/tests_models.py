@@ -18,11 +18,20 @@ class CompraTests(TestCase):
         quantidade = 100
         produto = Produto.objects.first()
         
+        # Ao criar
         Compra.objects.create(produto=produto, valor=valor1, quantidade=quantidade)
         Compra.objects.create(produto=produto, valor=valor2, quantidade=quantidade)
         
         valor_medio_esperado = (valor1 + valor2)/(quantidade * 2)
-        self.assertEqual(produto.valor_medio,  valor_medio_esperado)
+        self.assertEqual(Produto.objects.first().valor_medio,  valor_medio_esperado)
+        
+        # Ao editar
+        compra = Compra.objects.last()
+        compra.valor = valor1
+        compra.save()
+        
+        valor_medio_esperado = (valor1 * 2)/(quantidade * 2)
+        self.assertEqual(Produto.objects.first().valor_medio,  valor_medio_esperado)
 
 class ProdutoTests(TestCase):
         

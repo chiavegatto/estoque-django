@@ -77,10 +77,21 @@ class CompraViews(TestCase):
         self.assertEqual(resposta.status_code, 200)
         self.assertTemplateUsed(resposta, 'estoque/listagem_compras.html')
 
-    def test_recusa_form_invalido_compra_view(self):
+    def test_recusa_form_branco_compra_view(self):
         self.client.login(username='nome', password='pass')
-        resposta = self.client.post('/compra/', {}) # pedido em branco
+        # pedido em branco
+        resposta = self.client.post('/compra/', {}) 
         self.assertEqual(resposta.status_code, 302)
 
-
+    def test_recusa_form_invalido_compra_view(self):
+        # pedido invalido (parametro ruim)
+        resposta = self.client.post('/compra/', {'quantidade': 100, 'valor': 100, 'produto': "produto teste"}) 
+        self.assertEqual(resposta.status_code, 302)
+        
+    def test_aceita_form_valido_compra_view(self):
+        self.client.login(username='nome', password='pass')
+        # pedido certo
+        produto = Produto.objects.first()
+        resposta = self.client.post('/compra/', {'quantidade': 100, 'valor': 100, 'produto': produto.id}) 
+        self.assertEqual(resposta.status_code, 200)
 

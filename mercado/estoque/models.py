@@ -19,10 +19,10 @@ class Compra(models.Model):
 
     #Override do método save() do modelo para calcular o valor_medio automaticamente
     def save(self, *args, **kwargs):
-        
-        
-        quantidade_total = self.quantidade
-        valor_total = self.valor
+        quantidade_total = 0
+        valor_total = 0
+
+        super(Compra, self).save(*args, **kwargs)
         
         # pega compras relacionadas
         compras = Compra.objects.filter(produto=self.produto).aggregate(Sum('quantidade'), Sum('valor'))
@@ -39,4 +39,4 @@ class Compra(models.Model):
         produto = self.produto
         produto.valor_medio = novo_valor_medio
         produto.save()
-        super(Compra, self).save(*args, **kwargs)
+        
