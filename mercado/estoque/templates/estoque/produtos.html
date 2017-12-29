@@ -3,12 +3,14 @@
 
 <div class="center-div">
     <h2>Administrando Produtos</h2>
-
-    <form action="{%url 'produtos'%}" method="post">
-        {{ form }}
-        {% csrf_token %}
-        <input type="submit" value="Adicionar novo produto" />
-    </form>
+    <div class='form-wrapper'>
+        <form action="{%url 'produtos'%}" method="post">
+            {{ form }}
+            {% csrf_token %}
+            <input type="submit" value="Adicionar novo produto" />
+        </form>
+    </div>
+    <a href="{%url 'home'%}"><li>Voltar</li></a>
 </div>
 
 <table class="estoqueDatatable" data-page-length='25'> 
@@ -41,6 +43,4 @@
         {% endfor %}
     </tbody>
 </table>
-
-<a href="{%url 'home'%}">Voltar</a>
 {% endblock %}

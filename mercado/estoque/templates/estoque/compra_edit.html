@@ -1,14 +1,14 @@
 {% extends "estoque/application.html" %} 
 {% block content %} 
-<div class="center-div">
+<div class="center-div bigger-center-div" >
     <h2>Editando compra: <br>{{compra}}s</h2>
-
-    <form action="{% url 'compra'%}{{compra.id}}" method="post">
-        {{ form }}
-        {% csrf_token %}
-        <input type="submit" value="Editar Compra" />
-    </form>
-
-    <a href="{%url 'listagem_compras'%}">Voltar</a>
+    <div class="form-wrapper">
+        <form action="{% url 'compra'%}{{compra.id}}" method="post">
+            {{ form }}
+            {% csrf_token %}
+            <input type="submit" value="Editar Compra" />
+        </form>
+    </div>
+    <a href="{%url 'listagem_compras'%}"><li>Voltar</li></a>
 </div>
 {% endblock %}

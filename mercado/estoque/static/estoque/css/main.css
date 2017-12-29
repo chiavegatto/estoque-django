@@ -66,37 +66,57 @@ a{
 
 /***** GENERAL CENTER DIV *****/
 .center-div {
-    width: 500px;
+    width: 550px;
     height: 400px;
     text-align: center;
-    margin-left: 300px;
+    margin: auto;
     border-color: #DCD0C0;
     border-left-style: solid;
     border-width: 35px;
+
+    /** GRADIENT BORDER **/
+    -webkit-border-image: 
+        -webkit-gradient(linear, 0 0, 0 100%, from(#DCD0C0), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: 
+        -webkit-linear-gradient(#DCD0C0, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+        -moz-linear-gradient(#DCD0C0, rgba(0, 0, 0, 0)) 1 100%;    
+    -o-border-image:
+        -o-linear-gradient(#DCD0C0, rgba(0, 0, 0, 0)) 1 100%;
+    border-image:
+        linear-gradient(to bottom, #DCD0C0, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.bigger-center-div{
+    height: 600px;
 }
 
 .center-div h2 {
-    padding-top: 50px;
+    padding-top: 30px;
     font-size: 2.8em;
     color: #373737;
 }
 
+#heading-compra{
+    padding-top: 10px;
+    font-size: 2.9em;
+}
+
 .center-div li {
     color: #373737;
-    margin: 30px 100px;
+    margin: 15px 100px;
     padding: 10px 0px;
     border-style: solid;
     border-width: 2px;
-    border-color: #DCD0C0;
+    border-color: rgba(220, 208, 192, 0.575);
     border-radius: 2px;
     font-size: 1.3em;
-    transition: 0.6s;
+    transition: 0.5s background-color;
 }
 
 .center-div li:hover{
-    background-color: rgba(220, 208, 192, 0.753);
-    border-color: #DCD0C0;
-    color: #c0b283;
+    background-color: rgba(220, 208, 192, 0.575);
+    border-color: rgba(220, 208, 192, 0.575);
 }
 
 .center-div ul {
@@ -104,6 +124,73 @@ a{
     margin: 50px 0px;
 }
 
+/** FORMS **/
+
+.form-wrapper{
+    width: 80%;
+    margin: auto;
+    margin-left: 50px;
+}
+
+form input {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    outline: 0;
+    background: #f7f7f7;
+    border: 0;
+    padding: 10px;
+    font-size: 1.3em;
+    border-style: solid; 
+    border-color: rgba(220, 208, 192, 0.35);
+    border-width: 2px;
+    border-radius: 2px;
+}
+
+form input[type=submit]{
+    background: #f4f4f4;
+    margin-top: 50px;
+    padding: 10px 0px;
+    width: 311px;
+    border-color: rgba(220, 208, 192, 0.575);
+    transition: 0.5s background-color;
+}
+
+form input[type=submit]:hover{
+    background-color: rgba(220, 208, 192, 0.575);
+    border-color: rgba(220, 208, 192, 0.575);
+}
+
+label {
+    width: 100%;
+    margin-bottom: -10px;
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+select {
+    margin-top: 15px;
+    width: 80%;
+    text-align-last:center;
+    background: #f4f4f4;
+    font-size: 1.3em;
+    border-style: solid;
+    border-color: rgba(220, 208, 192, 0.575);
+    border-width: 2px;
+    border-radius: 2px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+::placeholder {
+    color: #999;
+ }
+
+ ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999;
+    opacity:  1;
+ }
 
 .delete {
     color: red;
