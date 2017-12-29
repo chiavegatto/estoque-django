@@ -14,24 +14,24 @@ Prazo: 29/12/2017 11:59
 ## Como inicializar
 
 #### Instalando as tecnologias necessárias
-* Instale python 3.5.2 ou superior
-    * Na maioria das distros Linux o python já vem pré instalado
-    * Para Mac OS X, use: `brew install python3`
+Instale python 3.5.2 ou superior
+* Na maioria das distros Linux o python já vem pré instalado
+
+* Para Mac OS X, use: `brew install python3`
+
             
-* Execute o comando para instalar o django:
+Execute o comando para instalar o django:
 
         sudo pip3 install Django==2.0
-* Logo depois:
+Logo depois:
 
-  * `git clone https://bitbucket.org/vipkry/querotrabalharnawpensar`
-
-  * `cd querotrabalharnawpensar/mercado`
-
-  * `python3 manage.py runserver`
+`git clone https://bitbucket.org/vipkry/querotrabalharnawpensar`
+`cd querotrabalharnawpensar/mercado`
+`python3 manage.py runserver`
 
   
 
-* Em seguida basta navegar para http://localhost:8000
+Em seguida basta navegar para http://localhost:8000
 
 * Se quiser fazer uso da página administrativa, crie um usuário adminstrativo com o comando:
         
