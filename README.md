@@ -3,9 +3,9 @@
 
 Desenvolvido por Gustavo Pergola
 
-Prazo: 29/12 11:59 
+Prazo: 29/12/2017 11:59 
 
-**Trello:** https://trello.com/b/TOzbvggQ/estoque-wpensar
+**Trello do projeto:** https://trello.com/b/TOzbvggQ/estoque-wpensar
 
 ## Tecnologias utilizadas
 * Python 3.5.2
@@ -16,17 +16,20 @@ Prazo: 29/12 11:59
 #### Instalando as tecnologias necessárias
 * Instale python 3.5.2 ou superior
     * Na maioria das distros Linux o python já vem pré instalado
-    * Para Mac OS X, use:
+    * Para Mac OS X, use: `brew install python3`
             
-            brew install python3
 * Execute o comando para instalar o django:
 
         sudo pip3 install Django==2.0
 * Logo depois:
 
-  * `git clone https://bitbucket.org/vipkry/querotrabalharnawpensar`
-  * `cd querotrabalharnawpensar/mercado`
-  * `python3 manage.py runserver`
+  `git clone https://bitbucket.org/vipkry/querotrabalharnawpensar`
+
+  `cd querotrabalharnawpensar/mercado`
+
+  `python3 manage.py runserver`
+
+  
 
 * Em seguida basta navegar para http://localhost:8000
 
@@ -59,6 +62,6 @@ Seu sistema deve ter:
 
 Esse sistema não precisa ter, mas será um plus:
 
-1. Autenticação e autorização -- OK (Sem OAuth)
+1. Autenticação e autorização -- OK (Não foi utilizado OAuth)
 2. Ter um design bonito -- OK
 3. Testes automatizados -- OK
