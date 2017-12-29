@@ -26,7 +26,9 @@ Execute o comando para instalar o django:
 Logo depois:
 
 `git clone https://bitbucket.org/vipkry/querotrabalharnawpensar`
+
 `cd querotrabalharnawpensar/mercado`
+
 `python3 manage.py runserver`
 
   
