@@ -37,9 +37,11 @@ Logo depois:
 
 Em seguida basta navegar para http://localhost:8000
 
-* Se quiser fazer uso da página administrativa, crie um usuário adminstrativo com o comando:
+* Se quiser fazer uso da página administrativa do django: (deixei user: root senha: admin123 como padrão)
         
         python3 manage.py createsuperuser
+
+Em seguida basta navegar para http://localhost:8000/admin
 
 * Se quiser aplicar os testes automatizados:
         
