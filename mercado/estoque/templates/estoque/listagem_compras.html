@@ -20,11 +20,38 @@
             <td> {{compra.quantidade}} </td>
             <td> R$ {{compra.valor}} </td>
             <td> <a href="{% url 'compra'%}{{compra.id}}" >Editar</a> </td>
-            <td> <a class='delete' href="/deletar_compra/{{compra.id}}"> Deletar </a></td>
+            <!-- <td> <a class='delete' href="/deletar_compra/{{compra.id}}"> Deletar </a> </td> -->
+            <td><a data-toggle="modal" data-target="#myModal{{compra.id}}" class='delete'>Apagar</a></td>
         </tr>
+    
+        <!-- Modal -->
+        <div id="myModal{{compra.id}}" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{compra}}s</h4>
+                </div>
+                <div class="modal-body">
+                <p>Tem certeza que deseja apagar esta compra?</p>
+                <p><b>Produto:</b> {{compra.produto}}</p>
+                <p><b>Quantidade:</b> {{compra.quantidade}}</p>
+                <p><b>Valor:</b> {{compra.valor}}</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/deletar_compra/{{compra.id}}"><button type="button" class="btn btn-danger">Apagar</button></a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>    
+                </div>
+            </div>
+            </div>
+        </div>
         {% endfor %}
     </tbody>
 </table>
 
 <a href="{%url 'home'%}"><li id="voltar-listagem">Voltar</li></a>
+
+
+
 {% endblock %}

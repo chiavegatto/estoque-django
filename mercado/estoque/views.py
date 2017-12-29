@@ -72,7 +72,7 @@ def deletar_compra(request, id):
     compra = get_object_or_404(Compra, id=id)
     descricao_compra = compra.__str__()
     compra.delete()
-    messages.add_message(request, messages.SUCCESS, 'Compra de ' + descricao_compra + 's deletada com sucesso.')
+    messages.add_message(request, messages.SUCCESS, 'Compra de ' + descricao_compra + 's apagada com sucesso.')
     return redirect('listagem_compras')
 
 

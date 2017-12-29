@@ -245,8 +245,6 @@ table.dataTable {
     margin: 27px;
 }
 
-
-
 .dataTables_length select{
     padding-top: 8px;
     width: 80px;
@@ -270,4 +268,8 @@ table.dataTable {
 
 #listagem-title{
     margin-top: 30px;
+}
+
+.modal p, .modal-footer, .modal-header{
+    text-align: center;
 }
