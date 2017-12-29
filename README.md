@@ -15,6 +15,7 @@ Prazo: 29/12/2017 11:59
 
 #### Instalando as tecnologias necessárias
 Instale python 3.5.2 ou superior
+
 * Na maioria das distros Linux o python já vem pré instalado
 
 * Para Mac OS X, use: `brew install python3`
