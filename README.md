@@ -23,11 +23,11 @@ Prazo: 29/12/2017 11:59
         sudo pip3 install Django==2.0
 * Logo depois:
 
-  `git clone https://bitbucket.org/vipkry/querotrabalharnawpensar`
+  * `git clone https://bitbucket.org/vipkry/querotrabalharnawpensar`
 
-  `cd querotrabalharnawpensar/mercado`
+  * `cd querotrabalharnawpensar/mercado`
 
-  `python3 manage.py runserver`
+  * `python3 manage.py runserver`
 
   
 
