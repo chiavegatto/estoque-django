@@ -102,7 +102,7 @@ a{
     font-size: 2.9em;
 }
 
-.center-div li {
+.center-div li, #voltar-listagem {
     color: #373737;
     margin: 15px 100px;
     padding: 10px 0px;
@@ -114,7 +114,7 @@ a{
     transition: 0.5s background-color;
 }
 
-.center-div li:hover{
+.center-div li:hover, #voltar-listagem:hover{
     background-color: rgba(220, 208, 192, 0.575);
     border-color: rgba(220, 208, 192, 0.575);
 }
@@ -199,7 +199,7 @@ opacity:  1;
     font-size: 2.8em;
     color: #373737;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 .dataTables_wrapper {
@@ -211,6 +211,63 @@ opacity:  1;
     padding: 10px 60px;
 }
 
+.dataTables_filter{
+    margin-top: 15px;
+}
+
+.dataTables_filter input{
+    border-style: solid;
+    border-color: rgba(220, 208, 192, 0.575);
+    border-radius: 2px;
+    background-color: #f7f7f7;
+}
+
+table.dataTable tbody tr {
+    background-color: #f4f4f4;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(220, 208, 192, 0.5);
+}
+
+table.dataTable th, table {
+    text-align: center; 
+}
+
+table.dataTable {
+    border-color: rgba(220, 208, 192, 0.575) !important;
+}
+
+.dataTables_paginate{
+    margin: 20px;
+}
+
+.dataTables_info {
+    margin: 27px;
+}
+
+
+
+.dataTables_length select{
+    padding-top: 8px;
+    width: 80px;
+    height: 50px;
+    font-size: 1.2em;
+    margin: 5px;
+}
+
+/******** INDIVIDUAL STYLING ********/
+
 .delete {
     color: red;
+}
+
+#voltar-listagem {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+#listagem-title{
+    margin-top: 30px;
 }

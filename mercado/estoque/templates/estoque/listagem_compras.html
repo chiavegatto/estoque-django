@@ -1,7 +1,7 @@
 {% extends "estoque/application.html" %} 
 {% block content %} 
 
-<h2>Histórico de Compras</h2>
+<h2 class="table-title" id="listagem-title">Histórico de Compras</h2>
 
 <table class="estoqueDatatable" data-page-length='25'>
     <thead>
@@ -26,5 +26,5 @@
     </tbody>
 </table>
 
-<a href="{%url 'home'%}">Voltar</a>
+<a href="{%url 'home'%}"><li id="voltar-listagem">Voltar</li></a>
 {% endblock %}
