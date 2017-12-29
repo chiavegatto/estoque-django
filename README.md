@@ -68,3 +68,8 @@ Esse sistema não precisa ter, mas será um plus:
 1. Autenticação e autorização -- OK (Não foi utilizado OAuth)
 2. Ter um design bonito -- OK
 3. Testes automatizados -- OK
+
+
+## Screenshot do Projeto
+
+![Screenshot do projeto](screenshot.png)
