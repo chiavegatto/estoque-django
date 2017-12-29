@@ -10,7 +10,6 @@ Prazo: 29/12/2017 11:59
 ## Tecnologias utilizadas
 * Python 3.5.2
 * Django 2.0
-* Banco de dados default: sqlite3
 
 ## Como inicializar
 
